@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ang="en" dir="ltr">
+
+<head>
+  <title>Sawant Infotech - Private</title>
+  <link rel="icon" type="image/x-icon" href="https://sawant-infotech.github.io/source/logo.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- style -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="private.css">
+  <!-- js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/5b9d825ee0.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- social media -->
+  <meta property="og:title" content="Sawant Infotech" />
+  <meta property="og:description" content="Web and Software Development" />
+  <meta property="og:image" content="https://sawant-infotech.github.io/source/logo.jpg" />
+  <!-- SEO -->
+  <meta name="description" content="Make New Software As Your Requirements">
+  <meta name="keywords" content="software, sawant, web, development, coding, programming, website development">
+  <meta name="author" content="Sawant Infotech (Shubham Sawant)">
+</head>
+
+<body>
+  <!-- client data -->
+  <div class="visually-hidden">
+    <form name="visited-ip-form" method="POST">
+      <input type="text" name="IP" id="visit-ip-p1"><br>
+      <input type="text" name="IP Version" id="visit-ip-p2"><br>
+      <input type="text" name="City" id="visit-ip-p3"><br>
+      <input type="text" name="Region Code" id="visit-ip-p4"><br>
+      <input type="text" name="Region Name" id="visit-ip-p5"><br>
+      <input type="text" name="Country Code" id="visit-ip-p6"><br>
+      <input type="text" name="Country Name" id="visit-ip-p7"><br>
+      <input type="text" name="Country Capital" id="visit-ip-p8"><br>
+      <input type="text" name="Postal Code" id="visit-ip-p9"><br>
+      <input type="text" name="Latitude" id="visit-ip-p10"><br>
+      <input type="text" name="Longitude" id="visit-ip-p11"><br>
+      <input type="text" name="Time Zone" id="visit-ip-p12"><br>
+      <input type="text" name="Country Calling Code" id="visit-ip-p13"><br>
+      <input type="text" name="Autonomous System Name" id="visit-ip-p14"><br>
+      <input type="text" name="Organization" id="visit-ip-p15"><br>
+      <input type="text" name="Visit Date Time" id="visit-ip-p16">
+      <input type="text" name="Page" id="visit-ip-p17">
+    </form>
+    <script>
+      const scriptURL3 = 'https://script.google.com/macros/s/AKfycbz8Naryd7JIwMPLEk_19h3cxn_bN5kjMBHhhqAD_wpoNGkp1MYy4s6oUqKAolDoPEfa/exec'
+      const form3 = document.forms['visited-ip-form']
+      $.ajax(/*'http://ip-api.com/json'*/ 'https://ipapi.co/json/')
+        .then(
+          function success(response) {
+            document.getElementById('visit-ip-p1').value = response.ip;
+            document.getElementById('visit-ip-p2').value = response.version;
+            document.getElementById('visit-ip-p3').value = response.city;
+            document.getElementById('visit-ip-p4').value = response.region_code;
+            document.getElementById('visit-ip-p5').value = response.region;
+            document.getElementById('visit-ip-p6').value = response.country_code;
+
+            document.getElementById('visit-ip-p7').value = response.country_name;
+
+
+            document.getElementById('visit-ip-p8').value = response.country_capital;
+            document.getElementById('visit-ip-p9').value = response.postal;
+            document.getElementById('visit-ip-p10').value = response.latitude;
+            document.getElementById('visit-ip-p11').value = response.longitude;
+            document.getElementById('visit-ip-p12').value = response.timezone;
+            document.getElementById('visit-ip-p13').value = response.country_calling_code;
+            document.getElementById('visit-ip-p14').value = response.asn;
+            document.getElementById('visit-ip-p15').value = response.org;
+            document.getElementById('visit-ip-p16').value = new Date();
+            document.getElementById('visit-ip-p17').value = 'Private';
+            fetch(scriptURL3, { method: 'POST', body: new FormData(form3) })
+              .then(response => console.log('Sucess')
+              )
+              .catch(error => console.error('Error!', error.message))
+          },
+          function fail(data, status) {
+            document.getElementById('visit-ip-p1').value = response.status;
+            console.log('Request failed.  Returned status of',
+              status);
+            fetch(scriptURL3, { method: 'POST', body: new FormData(form3) })
+              .then(response => console.log('Sucess')
+              )
+              .catch(error => console.error('Error!', error.message))
+          }
+        );
+    </script>
+  </div>
+  <!-- ? Preloader Start -->
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center bg-back">
+      <div class="preloader-inner position-relative">
+        <div class="preloader-circle shadow-lg"></div>
+        <div class="preloader-img pere-text">
+          <img src="https://sawant-infotech.github.io/source/logo.png" alt="sawant-infotech">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="particles-js"></div>
+  <script src="/source/js/particles.js"></script>
+  <script src="/source/js/app.js"></script>
+  <div class="mainbox text-capitalize">
+    <div class="container position-absolute top-50 start-50 translate-middle">
+      <div class="container text-center text-white">
+        <a href="https://sawant-infotech.github.io/" class="text-decoration-none">
+          <p class="text-center fs-1 fw-bolder">Sawant Infotech</i></p>
+        </a>
+        <p class="text-center fs-1 fw-bold">Access Denied <i class="fa-solid fa-xmark"></i></p>
+        <p class="text-center fs-2 fw-semibold">This Is Private Folder <i class="fa-solid fa-folder"></i></p>
+        <a href="/" class="text-center fs-3 text-decoration-none">Jump To Home <i
+            class="fa-solid fa-house-user"></i></a>
+      </div>
+    </div>
+  </div>
+  <script>
+    /* 1. Proloder */
+    $(window).on('load', function () {
+      $('#preloader-active').delay(450).fadeOut('slow');
+      $('body').delay(450).css({
+        'overflow': 'visible'
+      });
+    });
+  </script>
+</body>
+
+</html>
